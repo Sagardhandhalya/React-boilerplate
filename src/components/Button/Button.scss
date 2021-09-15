@@ -1,5 +1,5 @@
-@import './../../theme/color';
-@import './../../theme/size';
+@import "./../../theme/color";
+@import "./../../theme/size";
 
 .primary_btn {
   background-color: $primary;
@@ -7,6 +7,5 @@
   padding: $md;
   border-radius: 10px;
   border: none;
-  margin: 5px;
-  font-size: 1.1rem;
+  margin: 3px;
 }
