@@ -1,6 +1,5 @@
-import Counter from "../Counter"
+import Counter from '../Counter'
 
 test('should Home component render', () => {
-    expect(true).toBe(true)
+  expect(true).toBe(true)
 })
-

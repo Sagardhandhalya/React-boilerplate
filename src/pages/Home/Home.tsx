@@ -1,6 +1,4 @@
 import './Home.scss'
-import logo from '../../assets/svg.svg'
-import Counter from '../../components/Counter/Counter'
 import HoverCard from '../../components/HoverCard/HoverCard'
 
 const Home = () => {
@@ -35,9 +33,6 @@ const Home = () => {
             descreption="react router dom with demo router"
             link="https://reactrouter.com/web/guides/quick-start"
           />
-          <div className="btn__container">
-            <Counter />
-          </div>
         </div>
       </main>
     </div>

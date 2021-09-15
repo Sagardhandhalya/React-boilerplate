@@ -2,8 +2,11 @@ import { useState } from 'react'
 import Button from '../Button/Button'
 
 const Counter = () => {
+  const sam = 'sagar'
+  console.log(sam)
+
   const [c, setC] = useState(0)
-  let logger = () => {
+  const logger = () => {
     alert('You clicked log it')
   }
   return (
