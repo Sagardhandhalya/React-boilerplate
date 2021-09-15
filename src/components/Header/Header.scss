@@ -1,0 +1,34 @@
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: navy 1px 3px 6px;
+  padding: 10px 0px;
+  margin-bottom: 10px;
+  width: 100%;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+
+  .navabar_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+  }
+
+  .navabar__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+    ul {
+      display: inline;
+
+      a {
+        margin-right: 15px;
+        text-decoration: none;
+      }
+    }
+  }
+}
