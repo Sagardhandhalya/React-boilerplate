@@ -1,34 +1,31 @@
+@use "./../../theme/" as *;
+
 .navbar__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(space-between, center, row);
   box-shadow: rgb(132, 132, 156) 1px 3px 6px;
-  padding: 10px 0px;
-  margin-bottom: 10px;
+  padding: $xxsm 0px;
+  margin-bottom: $xsm;
   width: 100%;
   position: sticky;
   top: 0px;
   z-index: 100;
-  background-color: white;
+  background-color: $bg;
 
   .navabar_left {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 50px;
+    @include flex(space-between, center, row);
+    margin-left: $lg;
   }
 
   .navabar__right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 50px;
+    @include flex(center, center, row);
+    margin-right: $lg;
     ul {
       display: inline;
 
       a {
-        margin-right: 15px;
+        margin-right: $xsm;
         text-decoration: none;
+        color: $primary;
       }
     }
   }

@@ -15,8 +15,6 @@ const instance: AxiosInstance = axios.create({
 
 function makeRequest(config: AxiosRequestConfig = defaultConfig) {
   return instance(config)
-    .then((res) => res.data)
-    .catch((res) => alert(JSON.stringify(res)))
 }
 
 export { makeRequest }

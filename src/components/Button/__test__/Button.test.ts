@@ -1,5 +1,5 @@
 test('should button render', () => {
-  expect(true).toBe(true)
+  expect(2 + 2).toBe(4)
 })
 
 export {}
