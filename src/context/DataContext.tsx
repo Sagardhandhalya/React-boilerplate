@@ -19,9 +19,14 @@ const DataContext = ({ children }: ContextProps) => {
     makeRequest({
       method: 'GET',
       url: '/todos?_start=10&_limit=5',
-    }).then((res) => {
-      setTodos(res)
     })
+      .then((res) => {
+        setTodos(res.data)
+      })
+      .catch((err) => {
+        console.log(err)
+        setTodos([])
+      })
   }, [])
   return (
     <dataContext.Provider value={{ todos: todos, updateTodo: setTodos }}>

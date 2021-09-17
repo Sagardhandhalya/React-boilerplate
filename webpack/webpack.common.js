@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
-  mode:"development",
+  mode: 'development',
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
@@ -20,16 +20,16 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: ['style-loader','css-loader','sass-loader'],
-      }
-      ,{
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+      {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
-        type : 'asset/resource'
+        type: 'asset/resource',
       },
       {
         test: /\.(woff(2)?|eot|ttf|otf|svg|)$/i,
-        type : 'asset/inline'
-      }
+        type: 'asset/inline',
+      },
     ],
   },
   output: {
@@ -40,5 +40,5 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
-  ]
+  ],
 }

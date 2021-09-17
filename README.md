@@ -160,6 +160,12 @@ For dom testing, we need to add some react testing library utility
 npm i -D @testing-library/react
 ```
 
+to write in test in the type script we need ts-jest pkg.added jest.config.js to change environment .ts extention.
+
+```js
+npm i -D ts-jest
+```
+
 ### 6. Add routing
 
 ```js

@@ -1,11 +1,10 @@
-@import "./../../theme/color";
-@import "./../../theme/size";
+@use "./../../theme/" as *;
 
 .primary_btn {
   background-color: $primary;
-  color: white;
-  padding: $md;
-  border-radius: 10px;
+  color: $font-light;
+  padding: $xsm;
+  border-radius: $xxsm;
   border: none;
   margin: 3px;
 }

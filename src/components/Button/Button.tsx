@@ -8,6 +8,7 @@ const Button: FC<IbuttonProps> = ({ text, onClick, type }) => {
       className="primary_btn"
       type={type}
       onClick={() => onClick((p) => p + 1)}
+      data-testid="button"
     >
       {text}
     </button>

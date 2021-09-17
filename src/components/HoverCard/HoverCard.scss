@@ -1,7 +1,9 @@
+@use "./../../theme/" as *;
+
 .card {
   margin: 1rem;
   flex-basis: 45%;
-  padding: 1.5rem;
+  padding: $sm;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -17,13 +19,12 @@
   }
 
   h3 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
+    font-size: $sm;
   }
 
   p {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: $xsm;
     line-height: 1.5;
   }
 }
