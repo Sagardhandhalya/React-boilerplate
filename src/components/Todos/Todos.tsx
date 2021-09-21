@@ -128,7 +128,7 @@ const Todos = () => {
           name="text"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
-          placeholder="Make a Commite"
+          placeholder="make coffee"
         />
 
         <Button text="+ Add Todo" type="submit" onClick={() => addNewTodo} />
