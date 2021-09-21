@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useDataContext } from '../../../context/DataContext'
 import { ITodo } from '../../../context/Types'
-import { useSnackBar } from '../../../helper/hooks/UseSnackBar'
+import { useSnackBar } from '../../../helper/customHooks/UseSnackBar'
 import { makeRequest } from '../../../services/Fetch'
 import Button from '../../atoms/Button/Button'
 import Loader from '../../atoms/Loader/Loader'
