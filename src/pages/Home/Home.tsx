@@ -1,5 +1,5 @@
 import './Home.scss'
-import HoverCard from '../../components/HoverCard/HoverCard'
+import HoverCard from '../../components/molecules/HoverCard/HoverCard'
 
 const Home = () => {
   return (

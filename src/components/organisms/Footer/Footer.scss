@@ -1,0 +1,12 @@
+@use "./../../../theme/" as *;
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: black;
+    height: 6vh;
+    color: $font;
+    @include flex(center, center, row);
+    background-color: $bg;
+}

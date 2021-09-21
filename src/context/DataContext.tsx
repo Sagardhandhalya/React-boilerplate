@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { makeRequest } from '../services/Fetch.service'
+import { makeRequest } from '../services/Fetch'
 import { ContextProps, IContextValue, ITodo } from './Types'
 const initialState = {
   todos: [
@@ -12,6 +12,7 @@ const initialState = {
   ],
 }
 const dataContext = createContext<IContextValue>(initialState)
+
 const DataContext = ({ children }: ContextProps) => {
   const [todos, setTodos] = useState<Array<ITodo>>(initialState.todos)
 

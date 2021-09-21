@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { useDataContext } from '../../context/DataContext'
-import { ITodo } from '../../context/Types'
-import { useSnackBar } from '../../helper/Hooks/UseSnackBar'
-import { makeRequest } from '../../services/Fetch.service'
-import Button from '../Button/Button'
-import Loader from '../Loader/Loader'
-import SnackBar from '../SnackBar/SnackBar'
-import delete_icon from './../../assets/delete-button.svg'
+import { useDataContext } from '../../../context/DataContext'
+import { ITodo } from '../../../context/Types'
+import { useSnackBar } from '../../../helper/hooks/UseSnackBar'
+import { makeRequest } from '../../../services/Fetch'
+import Button from '../../atoms/Button/Button'
+import Loader from '../../atoms/Loader/Loader'
+import SnackBar from '../../molecules/SnackBar/SnackBar'
+import delete_icon from './../../../assets/delete-button.svg'
 import './Todos.scss'
 
 const Todos = () => {
@@ -128,7 +128,7 @@ const Todos = () => {
           name="text"
           value={todoText}
           onChange={(e) => setTodoText(e.target.value)}
-          placeholder="Make a Commite"
+          placeholder="make coffee"
         />
 
         <Button text="+ Add Todo" type="submit" onClick={() => addNewTodo} />

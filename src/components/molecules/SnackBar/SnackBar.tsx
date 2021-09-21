@@ -13,7 +13,7 @@ const SnackBar: FC<ISnackBarProps> = ({
     setTimeout(() => {
       close(false)
     }, 2000)
-  }, [close])
+  }, [visible, close])
   return visible ? (
     <div className={`snackbar__container ${type} ${position}`}>
       <div>
