@@ -1,4 +1,4 @@
-import Todos from '../../components/Todos/Todos'
+import Todos from '../../components/organisms/Todos/Todos'
 import DataContext from '../../context/DataContext'
 
 const FeatureTest = () => {

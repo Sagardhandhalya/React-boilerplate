@@ -1,5 +1,5 @@
 import './Header.scss'
-import monster from '../../assets/png_test.png'
+import monster from './../../../assets/png_test.png'
 import { Link } from 'react-router-dom'
 
 const Header = () => {

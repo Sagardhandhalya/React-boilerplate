@@ -2,7 +2,7 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import FeatureTest from './pages/FeatureTest/FeatureTest'
 import './App.scss'
-import Layout from './components/Layout/Layout'
+import Layout from './Layout/Layout'
 const App = () => {
   return (
     <Layout>
