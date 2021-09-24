@@ -2,23 +2,21 @@ import { FC, useEffect } from 'react'
 import './SnackBar.scss'
 import { ISnackBarProps } from './Types'
 
-const SnackBar: FC<ISnackBarProps> = ({
-  text,
-  type,
-  close,
-  position,
-  visible,
-}) => {
+const SnackBar: FC<ISnackBarProps> = ({ snackSpecs, visible }) => {
+  console.log(snackSpecs)
+
   useEffect(() => {
     setTimeout(() => {
-      close(false)
-    }, 2000)
-  }, [visible, close])
+      snackSpecs.close?.(false)
+    }, 5000)
+  }, [visible, snackSpecs])
   return visible ? (
-    <div className={`snackbar__container ${type} ${position}`}>
+    <div
+      className={`snackbar__container ${snackSpecs.type} ${snackSpecs.position}`}
+    >
       <div>
-        {text}
-        <button onClick={() => close(false)}>&#x2715;</button>
+        {snackSpecs.msg}
+        <button onClick={() => snackSpecs.close?.(false)}>&#x2715;</button>
       </div>
     </div>
   ) : (

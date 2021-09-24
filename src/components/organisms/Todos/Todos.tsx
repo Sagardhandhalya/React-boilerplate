@@ -1,24 +1,22 @@
 import { useState } from 'react'
 import { useDataContext } from '../../../context/DataContext'
+import { useFeedbackContext } from '../../../context/FeedbackContext'
 import { ITodo } from '../../../context/Types'
-import { useSnackBar } from '../../../helper/customHooks/UseSnackBar'
 import { makeRequest } from '../../../services/Fetch'
 import Button from '../../atoms/Button/Button'
-import Loader from '../../atoms/Loader/Loader'
-import SnackBar from '../../molecules/SnackBar/SnackBar'
 import delete_icon from './../../../assets/delete-button.svg'
 import './Todos.scss'
 
 const Todos = () => {
   const { todos, updateTodo } = useDataContext()
-  const [loading, setLoading] = useState(false)
-  const [snack, open, setOpen, setSnack] = useSnackBar()
+  const { setIsSnackVisible, setSnackProps, setIsLoaderVisible } =
+    useFeedbackContext()
   const [todoText, setTodoText] = useState('')
 
   const addNewTodo = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (todoText.length > 0) {
-      setLoading(true)
+      setIsLoaderVisible(true)
       makeRequest({
         method: 'POST',
         url: '/todos',
@@ -31,28 +29,28 @@ const Todos = () => {
         .then((res) => {
           updateTodo?.([...todos, res.data])
           setTodoText('')
-          setLoading(false)
-          setOpen(true)
-          setSnack({
+          setIsLoaderVisible(false)
+          setIsSnackVisible(true)
+          setSnackProps({
             type: 'success',
             msg: 'todo added successfuly',
             position: 'bottom_left',
           })
         })
         .catch((err) => {
-          setOpen(true)
-          setSnack({
+          setIsSnackVisible(true)
+          setSnackProps({
             type: 'error',
             msg: err.message,
             position: 'bottom_right',
           })
-          setLoading(false)
+          setIsLoaderVisible(false)
         })
     }
   }
 
   const deleteTodo = (todo: ITodo) => {
-    setLoading(true)
+    setIsLoaderVisible(true)
     makeRequest({
       method: 'DELETE',
       url: `/todos/${todo.id}`,
@@ -61,28 +59,28 @@ const Todos = () => {
       },
     })
       .then(() => {
-        setLoading(false)
+        setIsLoaderVisible(false)
         updateTodo?.(todos.filter((t) => t.id !== todo.id))
-        setOpen(true)
-        setSnack({
+        setIsSnackVisible(true)
+        setSnackProps({
           type: 'success',
           msg: 'todo Deleted successfuly',
           position: 'bottom_left',
         })
       })
       .catch((err) => {
-        setOpen(true)
-        setSnack({
+        setIsSnackVisible(true)
+        setSnackProps({
           type: 'error',
           msg: err.message,
           position: 'bottom_right',
         })
-        setLoading(false)
+        setIsLoaderVisible(false)
       })
   }
 
   const toggleCompleted = (todo: ITodo) => {
-    setLoading(true)
+    setIsLoaderVisible(true)
     makeRequest({
       method: 'PATCH',
       url: `/todos/${todo.id}`,
@@ -96,31 +94,21 @@ const Todos = () => {
         updateTodo?.(
           todos.map((todos) => (todos.id === todo.id ? res.data : todos))
         )
-        setLoading(false)
+        setIsLoaderVisible(false)
       })
       .catch((err) => {
-        setOpen(true)
-        setSnack({
+        setIsSnackVisible(true)
+        setSnackProps({
           type: 'error',
           msg: err.message,
           position: 'bottom_right',
         })
-        setLoading(false)
+        setIsLoaderVisible(false)
       })
   }
 
   return (
     <div className="main__todo_container">
-      <Loader visible={loading} />
-
-      <SnackBar
-        text={snack.msg}
-        type={snack.type}
-        close={setOpen}
-        position={snack.position}
-        visible={open}
-      />
-
       <form className="form__container" onSubmit={(e) => addNewTodo(e)}>
         <input
           type="text"
