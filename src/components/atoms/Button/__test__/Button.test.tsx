@@ -5,7 +5,7 @@ beforeEach(() => {
   // repetative login go here
 })
 
-test('should Button render with ptops', () => {
+test('should Button render with given props', () => {
   const { getByTestId } = render(
     <Button
       text="Simple Button"
