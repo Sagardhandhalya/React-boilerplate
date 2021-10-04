@@ -9,4 +9,5 @@
     color: $font;
     @include flex(center, center, row);
     background-color: $bg;
+    padding: 0px;
 }
